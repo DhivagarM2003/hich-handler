@@ -1,0 +1,40 @@
+
+POST http://localhost:3000/student/create_student  HTTP/1.1
+Content-Type: application/json 
+
+{
+   
+            "roll":"2334567",  
+            "name":"dhiva",
+            "email":"23@ok.in",
+            "phone":"2234567890",
+            "dob":"2023-10-23T14:30:00+00:00",
+            "password":"asd"
+        
+}
+
+###
+
+POST http://localhost:3000/student/login  HTTP/1.1
+Content-Type: application/json
+
+{
+    "roll":"2334567",  
+    "pass":"asd"     
+}
+
+###
+
+POST http://localhost:3000/student/create_post  HTTP/1.1
+Content-Type: application/json
+
+{
+            "title":"bathroom scacity",  
+            "desc":"lack of bathroom lack in attendence",
+            "roll":"2334567",
+            "domain":"hostel",
+            "location":"vagai",
+            "type":"public"
+            
+            
+}

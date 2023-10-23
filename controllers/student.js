@@ -20,5 +20,61 @@ class student{
 
         
     }
+    static async login(params) 
+    {
+        var result={};
+        if(params.email)
+        {
+            result= await prisma.Student.findUnique({
+             where:{email:params.email,password:params.pass} 
+        });
+        }else if(params.roll)
+        {
+            result = await prisma.Student.findUnique
+        ({
+             where:{roll:params.roll,password:params.pass} 
+        });
+        }
+        else if(params.phone)
+        {
+            result = await prisma.Student.findUnique({
+             where:{phoneo:params.phone,password:params.pass} 
+        });
+        }
+        return result;
+    }
+    
+ 
+  
+    static async createpost(params) 
+    {
+        await prisma.Post.create({data:{
+            "title":params.title,  
+            "desc":params.desc,
+            "roll":params.roll,
+            "domain":params.domain,
+            "location":params.location,
+            "type":params.type,
+            "currentstatus":params.currentstatus,
+            "student":params.student
+        }
+        
+        });
+        return true;
+
+        
+    }
+    static async view_persnol_post(params) 
+    {
+        await prisma.Student.findone({  });
+        return true;
+    }
+    static async view_public_post(params) 
+    {
+        await prisma.Student.findone({  });
+        return true;
+    }
+
+
 }
 module.exports=student;

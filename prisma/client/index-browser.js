@@ -138,6 +138,7 @@ exports.Prisma.PostScalarFieldEnum = {
   updatedAt: 'updatedAt',
   domain: 'domain',
   location: 'location',
+  type: 'type',
   currentstatus: 'currentstatus'
 };
 

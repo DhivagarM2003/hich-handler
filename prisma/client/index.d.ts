@@ -3193,6 +3193,7 @@ export namespace Prisma {
     updatedAt: Date | null
     domain: string | null
     location: string | null
+    type: string | null
     currentstatus: string | null
   }
 
@@ -3205,6 +3206,7 @@ export namespace Prisma {
     updatedAt: Date | null
     domain: string | null
     location: string | null
+    type: string | null
     currentstatus: string | null
   }
 
@@ -3217,6 +3219,7 @@ export namespace Prisma {
     updatedAt: number
     domain: number
     location: number
+    type: number
     currentstatus: number
     _all: number
   }
@@ -3231,6 +3234,7 @@ export namespace Prisma {
     updatedAt?: true
     domain?: true
     location?: true
+    type?: true
     currentstatus?: true
   }
 
@@ -3243,6 +3247,7 @@ export namespace Prisma {
     updatedAt?: true
     domain?: true
     location?: true
+    type?: true
     currentstatus?: true
   }
 
@@ -3255,6 +3260,7 @@ export namespace Prisma {
     updatedAt?: true
     domain?: true
     location?: true
+    type?: true
     currentstatus?: true
     _all?: true
   }
@@ -3340,6 +3346,7 @@ export namespace Prisma {
     updatedAt: Date
     domain: string
     location: string
+    type: string
     currentstatus: string
     _count: PostCountAggregateOutputType | null
     _min: PostMinAggregateOutputType | null
@@ -3369,6 +3376,7 @@ export namespace Prisma {
     updatedAt?: boolean
     domain?: boolean
     location?: boolean
+    type?: boolean
     currentstatus?: boolean
     statuslog?: boolean | Post$statuslogArgs<ExtArgs>
     likes?: boolean | Post$likesArgs<ExtArgs>
@@ -3385,6 +3393,7 @@ export namespace Prisma {
     updatedAt?: boolean
     domain?: boolean
     location?: boolean
+    type?: boolean
     currentstatus?: boolean
   }
 
@@ -3412,6 +3421,7 @@ export namespace Prisma {
       updatedAt: Date
       domain: string
       location: string
+      type: string
       currentstatus: string
     }, ExtArgs["result"]["post"]>
     composites: {}
@@ -3820,6 +3830,7 @@ export namespace Prisma {
     readonly updatedAt: FieldRef<"Post", 'DateTime'>
     readonly domain: FieldRef<"Post", 'String'>
     readonly location: FieldRef<"Post", 'String'>
+    readonly type: FieldRef<"Post", 'String'>
     readonly currentstatus: FieldRef<"Post", 'String'>
   }
     
@@ -6071,6 +6082,7 @@ export namespace Prisma {
     updatedAt: 'updatedAt',
     domain: 'domain',
     location: 'location',
+    type: 'type',
     currentstatus: 'currentstatus'
   };
 
@@ -6324,6 +6336,7 @@ export namespace Prisma {
     updatedAt?: DateTimeFilter<"Post"> | Date | string
     domain?: StringFilter<"Post"> | string
     location?: StringFilter<"Post"> | string
+    type?: StringFilter<"Post"> | string
     currentstatus?: StringFilter<"Post"> | string
     statuslog?: StatuslogListRelationFilter
     likes?: LikesListRelationFilter
@@ -6339,6 +6352,7 @@ export namespace Prisma {
     updatedAt?: SortOrder
     domain?: SortOrder
     location?: SortOrder
+    type?: SortOrder
     currentstatus?: SortOrder
     statuslog?: statuslogOrderByRelationAggregateInput
     likes?: likesOrderByRelationAggregateInput
@@ -6357,6 +6371,7 @@ export namespace Prisma {
     updatedAt?: DateTimeFilter<"Post"> | Date | string
     domain?: StringFilter<"Post"> | string
     location?: StringFilter<"Post"> | string
+    type?: StringFilter<"Post"> | string
     currentstatus?: StringFilter<"Post"> | string
     statuslog?: StatuslogListRelationFilter
     likes?: LikesListRelationFilter
@@ -6372,6 +6387,7 @@ export namespace Prisma {
     updatedAt?: SortOrder
     domain?: SortOrder
     location?: SortOrder
+    type?: SortOrder
     currentstatus?: SortOrder
     _count?: PostCountOrderByAggregateInput
     _max?: PostMaxOrderByAggregateInput
@@ -6390,6 +6406,7 @@ export namespace Prisma {
     updatedAt?: DateTimeWithAggregatesFilter<"Post"> | Date | string
     domain?: StringWithAggregatesFilter<"Post"> | string
     location?: StringWithAggregatesFilter<"Post"> | string
+    type?: StringWithAggregatesFilter<"Post"> | string
     currentstatus?: StringWithAggregatesFilter<"Post"> | string
   }
 
@@ -6670,8 +6687,9 @@ export namespace Prisma {
     createdAt?: Date | string
     updatedAt?: Date | string
     domain: string
-    location?: string
-    currentstatus: string
+    location: string
+    type: string
+    currentstatus?: string
     statuslog?: statuslogCreateNestedManyWithoutPostInput
     likes?: likesCreateNestedManyWithoutPostInput
     student: StudentCreateNestedOneWithoutPostsInput
@@ -6685,8 +6703,9 @@ export namespace Prisma {
     createdAt?: Date | string
     updatedAt?: Date | string
     domain: string
-    location?: string
-    currentstatus: string
+    location: string
+    type: string
+    currentstatus?: string
     statuslog?: statuslogUncheckedCreateNestedManyWithoutPostInput
     likes?: likesUncheckedCreateNestedManyWithoutPostInput
   }
@@ -6699,6 +6718,7 @@ export namespace Prisma {
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     domain?: StringFieldUpdateOperationsInput | string
     location?: StringFieldUpdateOperationsInput | string
+    type?: StringFieldUpdateOperationsInput | string
     currentstatus?: StringFieldUpdateOperationsInput | string
     statuslog?: statuslogUpdateManyWithoutPostNestedInput
     likes?: likesUpdateManyWithoutPostNestedInput
@@ -6714,6 +6734,7 @@ export namespace Prisma {
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     domain?: StringFieldUpdateOperationsInput | string
     location?: StringFieldUpdateOperationsInput | string
+    type?: StringFieldUpdateOperationsInput | string
     currentstatus?: StringFieldUpdateOperationsInput | string
     statuslog?: statuslogUncheckedUpdateManyWithoutPostNestedInput
     likes?: likesUncheckedUpdateManyWithoutPostNestedInput
@@ -6727,8 +6748,9 @@ export namespace Prisma {
     createdAt?: Date | string
     updatedAt?: Date | string
     domain: string
-    location?: string
-    currentstatus: string
+    location: string
+    type: string
+    currentstatus?: string
   }
 
   export type PostUpdateManyMutationInput = {
@@ -6739,6 +6761,7 @@ export namespace Prisma {
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     domain?: StringFieldUpdateOperationsInput | string
     location?: StringFieldUpdateOperationsInput | string
+    type?: StringFieldUpdateOperationsInput | string
     currentstatus?: StringFieldUpdateOperationsInput | string
   }
 
@@ -6751,6 +6774,7 @@ export namespace Prisma {
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     domain?: StringFieldUpdateOperationsInput | string
     location?: StringFieldUpdateOperationsInput | string
+    type?: StringFieldUpdateOperationsInput | string
     currentstatus?: StringFieldUpdateOperationsInput | string
   }
 
@@ -7062,6 +7086,7 @@ export namespace Prisma {
     updatedAt?: SortOrder
     domain?: SortOrder
     location?: SortOrder
+    type?: SortOrder
     currentstatus?: SortOrder
   }
 
@@ -7074,6 +7099,7 @@ export namespace Prisma {
     updatedAt?: SortOrder
     domain?: SortOrder
     location?: SortOrder
+    type?: SortOrder
     currentstatus?: SortOrder
   }
 
@@ -7086,6 +7112,7 @@ export namespace Prisma {
     updatedAt?: SortOrder
     domain?: SortOrder
     location?: SortOrder
+    type?: SortOrder
     currentstatus?: SortOrder
   }
 
@@ -7491,8 +7518,9 @@ export namespace Prisma {
     createdAt?: Date | string
     updatedAt?: Date | string
     domain: string
-    location?: string
-    currentstatus: string
+    location: string
+    type: string
+    currentstatus?: string
     statuslog?: statuslogCreateNestedManyWithoutPostInput
     likes?: likesCreateNestedManyWithoutPostInput
   }
@@ -7504,8 +7532,9 @@ export namespace Prisma {
     createdAt?: Date | string
     updatedAt?: Date | string
     domain: string
-    location?: string
-    currentstatus: string
+    location: string
+    type: string
+    currentstatus?: string
     statuslog?: statuslogUncheckedCreateNestedManyWithoutPostInput
     likes?: likesUncheckedCreateNestedManyWithoutPostInput
   }
@@ -7568,6 +7597,7 @@ export namespace Prisma {
     updatedAt?: DateTimeFilter<"Post"> | Date | string
     domain?: StringFilter<"Post"> | string
     location?: StringFilter<"Post"> | string
+    type?: StringFilter<"Post"> | string
     currentstatus?: StringFilter<"Post"> | string
   }
 
@@ -7753,8 +7783,9 @@ export namespace Prisma {
     createdAt?: Date | string
     updatedAt?: Date | string
     domain: string
-    location?: string
-    currentstatus: string
+    location: string
+    type: string
+    currentstatus?: string
     likes?: likesCreateNestedManyWithoutPostInput
     student: StudentCreateNestedOneWithoutPostsInput
   }
@@ -7767,8 +7798,9 @@ export namespace Prisma {
     createdAt?: Date | string
     updatedAt?: Date | string
     domain: string
-    location?: string
-    currentstatus: string
+    location: string
+    type: string
+    currentstatus?: string
     likes?: likesUncheckedCreateNestedManyWithoutPostInput
   }
 
@@ -7796,6 +7828,7 @@ export namespace Prisma {
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     domain?: StringFieldUpdateOperationsInput | string
     location?: StringFieldUpdateOperationsInput | string
+    type?: StringFieldUpdateOperationsInput | string
     currentstatus?: StringFieldUpdateOperationsInput | string
     likes?: likesUpdateManyWithoutPostNestedInput
     student?: StudentUpdateOneRequiredWithoutPostsNestedInput
@@ -7810,6 +7843,7 @@ export namespace Prisma {
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     domain?: StringFieldUpdateOperationsInput | string
     location?: StringFieldUpdateOperationsInput | string
+    type?: StringFieldUpdateOperationsInput | string
     currentstatus?: StringFieldUpdateOperationsInput | string
     likes?: likesUncheckedUpdateManyWithoutPostNestedInput
   }
@@ -7821,8 +7855,9 @@ export namespace Prisma {
     createdAt?: Date | string
     updatedAt?: Date | string
     domain: string
-    location?: string
-    currentstatus: string
+    location: string
+    type: string
+    currentstatus?: string
     statuslog?: statuslogCreateNestedManyWithoutPostInput
     student: StudentCreateNestedOneWithoutPostsInput
   }
@@ -7835,8 +7870,9 @@ export namespace Prisma {
     createdAt?: Date | string
     updatedAt?: Date | string
     domain: string
-    location?: string
-    currentstatus: string
+    location: string
+    type: string
+    currentstatus?: string
     statuslog?: statuslogUncheckedCreateNestedManyWithoutPostInput
   }
 
@@ -7891,6 +7927,7 @@ export namespace Prisma {
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     domain?: StringFieldUpdateOperationsInput | string
     location?: StringFieldUpdateOperationsInput | string
+    type?: StringFieldUpdateOperationsInput | string
     currentstatus?: StringFieldUpdateOperationsInput | string
     statuslog?: statuslogUpdateManyWithoutPostNestedInput
     student?: StudentUpdateOneRequiredWithoutPostsNestedInput
@@ -7905,6 +7942,7 @@ export namespace Prisma {
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     domain?: StringFieldUpdateOperationsInput | string
     location?: StringFieldUpdateOperationsInput | string
+    type?: StringFieldUpdateOperationsInput | string
     currentstatus?: StringFieldUpdateOperationsInput | string
     statuslog?: statuslogUncheckedUpdateManyWithoutPostNestedInput
   }
@@ -7949,8 +7987,9 @@ export namespace Prisma {
     createdAt?: Date | string
     updatedAt?: Date | string
     domain: string
-    location?: string
-    currentstatus: string
+    location: string
+    type: string
+    currentstatus?: string
   }
 
   export type likesCreateManyStudentInput = {
@@ -7966,6 +8005,7 @@ export namespace Prisma {
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     domain?: StringFieldUpdateOperationsInput | string
     location?: StringFieldUpdateOperationsInput | string
+    type?: StringFieldUpdateOperationsInput | string
     currentstatus?: StringFieldUpdateOperationsInput | string
     statuslog?: statuslogUpdateManyWithoutPostNestedInput
     likes?: likesUpdateManyWithoutPostNestedInput
@@ -7979,6 +8019,7 @@ export namespace Prisma {
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     domain?: StringFieldUpdateOperationsInput | string
     location?: StringFieldUpdateOperationsInput | string
+    type?: StringFieldUpdateOperationsInput | string
     currentstatus?: StringFieldUpdateOperationsInput | string
     statuslog?: statuslogUncheckedUpdateManyWithoutPostNestedInput
     likes?: likesUncheckedUpdateManyWithoutPostNestedInput
@@ -7992,6 +8033,7 @@ export namespace Prisma {
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     domain?: StringFieldUpdateOperationsInput | string
     location?: StringFieldUpdateOperationsInput | string
+    type?: StringFieldUpdateOperationsInput | string
     currentstatus?: StringFieldUpdateOperationsInput | string
   }
 

@@ -27,4 +27,41 @@ router.post('/create_student', async (req, res) => {
 });
 
 
+router.post('/login', async (req, res) => {
+    try {
+        // Attempt to validate a  student
+        const result =  await student.login(req.body); 
+        
+        // Check the result and send an appropriate response
+        if (result) {
+            res.status(200).json(result);
+        } else {
+            res.status(500).json({ "error": "no student found" });
+        }
+    } catch (error) {
+        // Handle errors by sending an error response
+        console.error('Error checking student:', error);
+        res.status(500).json({ "error": "Internal server error" });
+    }
+});
+
+router.post('/create_post', async (req, res) => {
+    try {
+        // Attempt to create a new post
+        const result =  await student.createpost(req.body); 
+        
+        // Check the result and send an appropriate response
+        if (result) {
+            res.status(200).json({ "message": "Successfully inserted" });
+        } else {
+            res.status(500).json({ "error": "Failed to create student" });
+        }
+    } catch (error) {
+        // Handle errors by sending an error response
+        console.error('Error creating student:', error);
+        res.status(500).json({ "error": "Internal server error" });
+    }
+});
+
+
 module.exports = router
