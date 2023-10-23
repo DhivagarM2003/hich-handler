@@ -66,13 +66,21 @@ class student{
     }
     static async view_persnol_post(params) 
     {
-        await prisma.Student.findone({  });
-        return true;
+        if(params.roll){
+        const result =await prisma.Post.findMany({where:{
+            roll:params.roll
+        }  
+    });
+        return result;
     }
-    static async view_public_post(params) 
+    }
+    static async view_public_post() 
     {
-        await prisma.Student.findone({  });
-        return true;
+        const result = await prisma.Post.findMany({where:{
+            type:"public"
+        }  
+    });
+        return result;
     }
 
 
