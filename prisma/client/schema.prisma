@@ -1,0 +1,73 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+  output   = "./client"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+model Student {
+  id        String    @id @default(uuid())
+  roll      String    @unique
+  name      String?
+  email     String?   @unique
+  phone     String?   @unique
+  dob       DateTime
+  password  String
+  // Use the plural form "posts" for the relation field
+  posts     Post[]   @relation("WrittenPosts")
+  likes     likes[]  @relation("LikedBy")
+}
+
+model Admin {
+  id        String    @id @default(uuid())
+  dob       DateTime
+  email     String?   @unique
+  phone     String?   @unique
+  name      String?
+  password  String
+  domain    String
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+}
+
+model Post {
+  postid         String    @id @default(uuid())
+  title          String
+  desc           String
+  roll           String
+  createdAt      DateTime  @default(now())
+  updatedAt      DateTime  @updatedAt
+  domain         String
+  location       String   @default("REVIEW")
+  currentstatus  String
+  // Define relations with statuslog and likes
+  statuslog      statuslog[] @relation("PostsReviewed")
+  likes          likes[]     @relation("PostsLiked")
+  // Define a relation with Student
+  student        Student     @relation("WrittenPosts", fields: [roll], references: [roll])
+}
+
+model statuslog {
+  id             String    @id @default(uuid())
+  postid         String
+  status         String
+  feedback       String
+  createdAt      DateTime  @default(now())
+  updatedAt      DateTime  @updatedAt
+  // Define a relation with Post
+  post           Post      @relation("PostsReviewed", fields: [postid], references: [postid])
+}
+
+model likes {
+  id             String    @id @default(uuid())
+  postid         String
+  roll           String
+  // Define relations with Post and Student
+  post           Post      @relation("PostsLiked", fields: [postid], references: [postid])
+  student        Student   @relation("LikedBy", fields: [roll], references: [roll])
+}
