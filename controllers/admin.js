@@ -45,12 +45,23 @@ class admin{
     {
         
         await prisma.statuslog.create({data:{
-            "postid":params.postid,
-            "status ":params.status ,
-            "feedback":params.feedback,
-            "status ":params.status   
+            "id":params.postid+params.status,
+            "postid":params.postid ,
+            "status":params.status ,
+            "feedback":params.feedback
+               
            
         }
+        
+        
+        });
+
+        await prisma.Post.update({data:{
+           
+            "currentstatus":params.status 
+                          
+           
+        },where:{postid:params.postid}
         
         
         });
@@ -62,10 +73,23 @@ class admin{
     static async view_domain_post(params) 
     {
         if(params.domain){
-        const result =await prisma.Post.findMany({where:{
+        const result =await prisma.statuslog.findMany({where:{
             domain:params.domain
         }  
     });
+        return result;
+    }
+    }
+
+    static async view_log_post(params) 
+    {
+        if(params.postid){
+        const result =await prisma.statuslog.findMany({where:{
+            postid:params.postid
+            
+        }  
+    });
+    
         return result;
     }
     }

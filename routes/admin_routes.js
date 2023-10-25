@@ -80,6 +80,24 @@ router.post('/view_domain', async (req, res) => {
         res.status(400).json({ "error": "Internal server error" });
     }
 });
+
+router.post('/view_log', async (req, res) => {
+    try {
+        // Attempt to view log of post
+        const result =  await admin.view_log_post(req.body); 
+        
+        // Check the result and send an appropriate response
+        if (result) {
+            res.status(200).json(result);
+        } else {
+            res.status(500).json({ "error": "no post log" });
+        }
+    } catch (error) {
+        // Handle errors by sending an error response
+        console.error('Error creating student:', error);
+        res.status(400).json({ "error": "Internal server error" });
+    }
+});
 router.post('/view_public', async (req, res) => {
     try {
         // Attempt to view persnol post
