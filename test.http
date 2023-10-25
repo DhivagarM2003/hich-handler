@@ -82,3 +82,32 @@ Content-Type: application/json
             "password":"asd"
         
 }
+
+
+###
+
+POST http://localhost:3000/admin/view_domain   HTTP/1.1
+Content-Type: application/json 
+
+{
+   
+              
+            "domain":"hostel"
+        
+}
+###
+POST http://localhost:3000/admin/Create_log  HTTP/1.1
+Content-Type: application/json 
+
+{
+   
+              
+            "postid":"1ede3466-3f2c-4e36-8fec-1c48c2fca343",
+            "status":"REJECTED",
+            "feedback":"no budjet"
+            
+        
+}
+
+
+

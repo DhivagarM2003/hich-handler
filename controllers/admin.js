@@ -43,37 +43,32 @@ class admin{
     
     static async createlog(params) 
     {
-        await prisma.Post.create({data:{
+        
+        await prisma.statuslog.create({data:{
             "postid":params.postid,
             "status ":params.status ,
-            "feedback":params.feedback,  
+            "feedback":params.feedback,
+            "status ":params.status   
            
         }
         
+        
         });
+        
         return true;
 
         
     }
-    static async view_persnol_post(params) 
+    static async view_domain_post(params) 
     {
-        if(params.roll){
+        if(params.domain){
         const result =await prisma.Post.findMany({where:{
-            roll:params.roll
+            domain:params.domain
         }  
     });
         return result;
     }
     }
-    static async view_public_post() 
-    {
-        const result = await prisma.Post.findMany({where:{
-            type:"public"
-        }  
-    });
-        return result;
-    }
-
-
+    
 }
 module.exports=admin;

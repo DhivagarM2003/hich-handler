@@ -63,10 +63,10 @@ router.post('/create_log', async (req, res) => {
     }
 });
 
-router.post('/view_persnol', async (req, res) => {
+router.post('/view_domain', async (req, res) => {
     try {
-        // Attempt to view persnol post
-        const result =  await student.view_persnol_post(req.body); 
+        // Attempt to view domain post
+        const result =  await admin.view_domain_post(req.body); 
         
         // Check the result and send an appropriate response
         if (result) {
